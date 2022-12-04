@@ -19,7 +19,7 @@ const socketFuncs = (io, socket) => {
     console.log("typing", userid);
   });
 
-  //FDg`psdv`psdvsdp`v
+  //FDg`psdv`
 
   socket.on(
     "send-message",
