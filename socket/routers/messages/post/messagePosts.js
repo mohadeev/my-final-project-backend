@@ -4,7 +4,7 @@ import createConversation from "./createConversation.js";
 //import createMessage from "./createMessage.js";
 const messagePosts = express.Router();
 
-messagePosts.use("/", verifyUser, createConversation);
+messagePosts.use("/", createConversation);
 //messagePosts.use("/", verifyUser, createMessage);
 
 // const allRoutes = [
