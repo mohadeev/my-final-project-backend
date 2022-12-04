@@ -19,7 +19,7 @@ const socketFuncs = (io, socket) => {
     console.log("typing", userid);
   });
 
-  //df
+  
 
   socket.on(
     "send-message",
