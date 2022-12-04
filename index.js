@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
 //   })
 // );
 
-app.use("/", Router);
+//app.use("/", Router);
 app.get("/api/user/senduser", (req, res) => {
   console.log("users");
   userModal.find({}).then((users) => {
