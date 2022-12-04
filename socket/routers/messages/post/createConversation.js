@@ -55,7 +55,7 @@ createConversation.post("/", async (req, res) => {
   });
 });
 
-createConversation.get("/conversion", function (req, res) {
-  res.json("here");
-});
+// createConversation.get("/conversion", function (req, res) {
+//   res.json("here");
+// });
 export default createConversation;
