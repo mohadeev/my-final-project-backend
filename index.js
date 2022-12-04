@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import dbConnect from "./db/dbConnect.js";
 import http from "http";
 import { Server, Socket } from "socket.io";
-//import Router from "./socket/routers/Router.js";
+import Router from "./socket/routers/Router.js";
 //import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
 import userModal from "./db/schema/userModal.js";
 
@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
 //   })
 // );
 
-//app.use("/", Router);
+app.use("/", Router);
 app.get("/api/user/senduser", (req, res) => {
   console.log("users");
   userModal.find({}).then((users) => {
