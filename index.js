@@ -53,6 +53,11 @@ app.get("/api/user/senduser", (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  console.log("users");
+  res.json({ data: "DF" });
+});
+
 server.listen(PORT, (err) => {
   if (err) console.log(err);
   console.log("Server running on Port ", PORT);
