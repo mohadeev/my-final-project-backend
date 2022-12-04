@@ -59,6 +59,3 @@ createConversation.post("/", async (req, res) => {
 //   res.json("here");
 // });
 export default createConversation;
-
-vercel logs https://sooktell.vercel.app --until 2099-09-04T07:05:43+00:00
-
