@@ -1,22 +1,22 @@
 import express from "express";
-const app = express();
+// const app = express();
 const PORT = process.env.PORT || 5000;
 import dotenv from "dotenv";
-import dbConnect from "./db/dbConnect.js";
-import http from "http";
-import { Server, Socket } from "socket.io";
-import Router from "./socket/routers/Router.js";
-import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
-import userModal from "./db/schema/userModal.js";
+// import dbConnect from "./db/dbConnect.js";
+// import http from "http";
+// import { Server, Socket } from "socket.io";
+// import Router from "./socket/routers/Router.js";
+// import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
+// import userModal from "./db/schema/userModal.js";
 
 dotenv.config();
 const ORIGIN = process.env.ORIGIN;
 
-app.use(express.json());
+// app.use(express.json());
 
-dbConnect();
+// dbConnect();
 
-const server = express();
+// const server = express();
 //http.createServer(app);
 
 // app.use(function (req, res, next) {
@@ -54,6 +54,7 @@ const server = express();
 //   });
 // });
 
+const server = express();
 server.get("/", (req, res) => {
   console.log("users");
   res.json({ data: "DF" });
