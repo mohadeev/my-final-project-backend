@@ -2,7 +2,7 @@ import express from "express";
 const app = express();
 const PORT = process.env.PORT || 5000;
 import dotenv from "dotenv";
-//import dbConnect from "./db/dbConnect.js";
+import dbConnect from "./db/dbConnect.js";
 import http from "http";
 import { Server, Socket } from "socket.io";
 //import Router from "./socket/routers/Router.js";
@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
 //   })
 // );
 
-//app.use("/", Router);
+app.use("/", Router);
 app.get("/api/user/senduser", (req, res) => {
   console.log("users");
   userModal.find({}).then((users) => {
