@@ -14,7 +14,7 @@ const ORIGIN = process.env.ORIGIN;
 app.use(express.json());
 dbConnect();
 const server = http.createServer(app);
-
+//
 // app.use(function (req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
 //   res.header(
