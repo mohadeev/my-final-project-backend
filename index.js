@@ -6,13 +6,13 @@ import dbConnect from "./db/dbConnect.js";
 import http from "http";
 import { Server, Socket } from "socket.io";
 import Router from "./socket/routers/Router.js";
-//import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
+import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
 import userModal from "./db/schema/userModal.js";
 
 dotenv.config();
 const ORIGIN = process.env.ORIGIN;
 app.use(express.json());
-//dbConnect();
+dbConnect();
 const server = http.createServer(app);
 
 // app.use(function (req, res, next) {
@@ -23,6 +23,14 @@ const server = http.createServer(app);
 //   );
 //   next();
 // });
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 const io = new Server(server, {
   cors: {
     origins: [`${ORIGIN}`],
@@ -30,7 +38,7 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-  //socketFuncs(io, socket);
+  socketFuncs(io, socket);
   console.log("new user connected");
 });
 

@@ -36,7 +36,7 @@ allConversation.get("/", async (req, res) => {
                 })
               );
               res.status(200).json({
-                responseData: { allConversation: { converData } },
+                responseData: { allConversation: converData },
               });
             });
         } catch (err) {

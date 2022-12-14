@@ -1,6 +1,5 @@
 import conversionsModal from "../../db/schema/converstionsModal.js";
 import userModal from "../../db/schema/userModal.js";
-
 let newRoomData = {};
 
 const newRoom = async (conversationId, receiver, sender, text) => {

@@ -40,7 +40,7 @@ createMessage.post("/", async (req, res) => {
                     console.log("message created", messageCreated);
                     res.status(200).json({
                       // isfirstmessage: isFirstMessage,
-                      data: messageCreated,
+                      responseData: messageCreated,
                     });
                   });
               } catch (err) {
