@@ -44,7 +44,7 @@ const socketFuncs = (io, socket) => {
       );
     }
   );
-
+//fg
   socket.on("typing-message", async ({ conversationId, receiver }) => {
     typing(conversationId, receiver, allusers, io);
   });
