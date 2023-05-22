@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
           const id = docadded._id.toString("hex");
           const username = docadded.username;
           let auth = true;
-          let userdata = { email, auth, id,  username  };
+          let userdata = { email, auth, id, username };
           const user = { user: docadded.id };
           const accesTokken = jwt.sign(user, process.env.ACCCES_TOKKEN_SECRET);
           res.json({
