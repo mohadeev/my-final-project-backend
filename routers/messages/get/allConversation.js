@@ -1,9 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
-import converstionsModal from "../../../../db/schema/converstionsModal.js";
-import messageModal from "../../../../db/schema/messageModal.js";
-import userModal from "../../../../db/schema/userModal.js";
-import findUserDataById from "../../../../utils/mogoose/findUserDataById.js";
+// import converstionsModal from "../../../db/schema/converstionsModal.js";
+// import messageModal from "../../../../db/schema/messageModal.js";
+// import userModal from "../../../../db/schema/userModal.js";
+// import findUserDataById from "../../../../utils/mogoose/findUserDataById.js";
+import converstionsModal from "../../../db/schema/converstionsModal.js";
+import findUserDataById from "../../../utils/mogoose/findUserDataById.js";
+import userModal from "../../../db/schema/userModal.js";
+// import userModal from "../../../db/schema/userModal.js";
 const allConversation = express.Router();
 
 allConversation.get("/", async (req, res) => {

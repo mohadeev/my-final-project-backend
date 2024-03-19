@@ -1,14 +1,17 @@
 import mongoose from "mongoose";
 import express, { response } from "express";
-import converstionsModal from "../../../../db/schema/converstionsModal.js";
-import messageModal from "../../../../db/schema/messageModal.js";
-import userModal from "../../../../db/schema/userModal.js";
-import verifyUser from "../../../../utils/verify-user/verifyUser.js";
+// import converstionsModal from "../../../../db/schema/converstionsModal.js";
+import converstionsModal from "../../../db/schema/converstionsModal.js";
+import messageModal from "../../../db/schema/messageModal.js";
+import userModal from "../../../db/schema/userModal.js";
+import verifyUser from "../../../utils/verify-user/verifyUser.js";
 const allMessages = express.Router();
 allMessages.get(
   "/get/message/all-messages/:convid/:token",
   verifyUser,
   async (req, res) => {
+    //import verifyUser from "../../../../utils/verify-user/verifyUser.js";
+
     const convId = req.params.convid;
     const reqUserId = req.userId;
     console.log("all message");

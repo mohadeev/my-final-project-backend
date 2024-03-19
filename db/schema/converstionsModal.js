@@ -7,5 +7,5 @@ const conversionSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const conversionsModal = mongoose.model("conversion", conversionSchema);
-export default conversionsModal;
+const converstionsModal = mongoose.model("conversion", conversionSchema);
+export default converstionsModal;

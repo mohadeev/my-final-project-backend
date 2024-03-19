@@ -1,5 +1,5 @@
 import express from "express";
-import verifyUser from "../../../../utils/verify-user/verifyUser.js";
+import verifyUser from "../../../utils/verify-user/verifyUser.js";
 import allConversation from "./allConversation.js";
 import allMessages from "./allMessages.js";
 

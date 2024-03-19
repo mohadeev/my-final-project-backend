@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-import userModal from "../../../../db/schema/userModal.js";
+import userModal from "../../../db/schema/userModal.js";
+// import userModal from "../../../../db/schema/userModal.js";
 const getUserData = express.Router();
 
 getUserData.get("/", async (req, res) => {

@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import userModal from "../../../../../db/schema/userModal.js";
+import userModal from "../../../../db/schema/userModal.js";
 
 const createuser = async (req, res) => {
   console.log(req.body);
@@ -37,8 +37,9 @@ const createuser = async (req, res) => {
         const CreateUser = async () => {
           const salt = await bcrypt.genSalt();
           const hashPassword = await bcrypt.hash(password, salt);
-          userModal.create({ email: email, password: hashPassword, username }).then(
-            (docadded) => {
+          userModal
+            .create({ email: email, password: hashPassword, username })
+            .then((docadded) => {
               const id = docadded._id.toString("hex");
               const accessToken = jwt.sign(id, process.env.ACCESS_TOKEN_SECRET);
               const user = { email: email, accessToken: accessToken };
@@ -49,8 +50,7 @@ const createuser = async (req, res) => {
                 message: "user created successfully",
                 user: user,
               });
-            }
-          );
+            });
         };
         CreateUser();
       }

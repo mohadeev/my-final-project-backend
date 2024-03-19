@@ -1,3 +1,5 @@
+// import userModal from "../../db/schema/userModal.js";
+
 import userModal from "../../db/schema/userModal.js";
 
 const findUserDataById = (findBy, findData) => {

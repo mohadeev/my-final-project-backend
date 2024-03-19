@@ -1,5 +1,5 @@
 import express from "express";
-import verifyUser from "../../../../utils/verify-user/verifyUser.js";
+import verifyUser from "../../../utils/verify-user/verifyUser.js";
 import getUserData from "./getUserData.js";
 
 const userGetRoutes = express.Router();

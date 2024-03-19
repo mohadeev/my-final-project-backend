@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const routerSignIn = express.Router();
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import userModal from "../../../../db/schema/userModal.js";
+import userModal from "../../../db/schema/userModal.js";
+// import userModal from "../../../../db/schema/userModal.js";
 
 routerSignIn.post("/", async (req, res) => {
   const { password, email } = req.body;

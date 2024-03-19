@@ -1,5 +1,5 @@
 import express from "express";
-import verifyUser from "../../../../utils/verify-user/verifyUser.js";
+import verifyUser from "../../../utils/verify-user/verifyUser.js";
 import createConversation from "./createConversation.js";
 import createMessage from "./createMessage.js";
 const messagePosts = express.Router();

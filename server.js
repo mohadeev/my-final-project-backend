@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import dbConnect from "./db/dbConnect.js";
 import http from "http";
 import { Server, Socket } from "socket.io";
-import Router from "./socket/routers/Router.js";
+import Router from "./routers/Router.js";
 import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
 import userModal from "./db/schema/userModal.js";
 
