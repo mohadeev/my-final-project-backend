@@ -1,13 +1,13 @@
-// import userModal from "../../db/schema/userModal.js";
+// import userModel from "../../db/schema/userModel.js";
 
-import userModal from "../../db/schema/userModal.js";
+import userModel from "../../db/schema/userModel.js";
 
 const findUserDataById = (findBy, findData) => {
   let yourKeyVariable = `${findBy}`;
   const query = {
     [yourKeyVariable]: findData,
   };
-  return userModal
+  return userModel
     .findOne(query)
     .exec()
     .then((employees) => {

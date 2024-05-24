@@ -1,9 +1,9 @@
 import conversionsModal from "../../db/schema/converstionsModal.js";
-import userModal from "../../db/schema/userModal.js";
+import userModel from "../../db/schema/userModel.js";
 let newRoomData = {};
 
 const newRoom = async (conversationId, receiver, sender, text) => {
-  await userModal.findOne({ email: receiver }).then(async (userdoc) => {
+  await userModel.findOne({ email: receiver }).then(async (userdoc) => {
     if (userdoc) {
       const friendPersonaldata = await userdoc;
       let friendData = await userdoc;

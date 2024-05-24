@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import converstionsModal from "../../../db/schema/converstionsModal.js";
-import userModal from "../../../db/schema/userModal.js";
+import userModel from "../../../db/schema/userModel.js";
 const createConversation = express.Router();
 
 createConversation.post("/", async (req, res) => {
@@ -9,8 +9,8 @@ createConversation.post("/", async (req, res) => {
   const reqUserId = req.userId;
   console.log("receiver", receiver);
   console.log("reqUserId", reqUserId);
-  await userModal.findOne({ _id: reqUserId }).then(async (useDoc) => {
-    const findReceiverData = await userModal
+  await userModel.findOne({ _id: reqUserId }).then(async (useDoc) => {
+    const findReceiverData = await userModel
       .findOne({ email: receiver })
       .then((recieverData) => {
         if (recieverData) {
@@ -27,7 +27,7 @@ createConversation.post("/", async (req, res) => {
         .then(async (conversation) => {
           if (conversation) {
             console.log("conversation", conversation);
-            res.json({ responseData: conversation });
+            res.json({ responseData: { conversation } });
           } else if (!conversation) {
             console.log("sorry no conversation", conversation);
             try {
@@ -40,7 +40,7 @@ createConversation.post("/", async (req, res) => {
                   res.json({
                     responseData: {
                       newConversation: true,
-                      conversationData: { newConversation },
+                      conversation: newConversation,
                       userData: findReceiverData,
                     },
                   });

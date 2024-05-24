@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const routerSignIn = express.Router();
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import userModal from "../../../db/schema/userModal.js";
-// import userModal from "../../../../db/schema/userModal.js";
+import userModel from "../../../db/schema/userModel.js";
+// import userModel from "../../../../db/schema/userModel.js";
 
 routerSignIn.post("/", async (req, res) => {
   const { password, email } = req.body;
   console.log(req.body);
-  await userModal.findOne({ email: email }).then((docadded) => {
+  await userModel.findOne({ email: email }).then((docadded) => {
     if (docadded) {
       bcrypt.compare(password, docadded.password).then((result) => {
         if (result) {

@@ -12,11 +12,11 @@ const removeUser = (socketId) => {
 };
 const socketFuncs = (io, socket) => {
   socket.on("get-id", (userid) => {
-    console.log("add added from email :", userid);
+    // console.log("add added from email :", userid);
     addUser(userid, socket.id);
   });
   socket.on("typing-message", (userid) => {
-    console.log("typing", userid);
+    // console.log("typing", userid);
   });
 
   //FDg`psdv`

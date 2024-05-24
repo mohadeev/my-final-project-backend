@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import userModal from "../../../../db/schema/userModal.js";
+import userModel from "../../../../db/schema/userModel.js";
 
 const createuser = async (req, res) => {
   console.log(req.body);
@@ -26,7 +26,7 @@ const createuser = async (req, res) => {
       message: "PasswordNotMatch",
     });
   } else {
-    await userModal.findOne({ email: email }).then((doc) => {
+    await userModel.findOne({ email: email }).then((doc) => {
       console.log("SDDDDDDDDDDDDDDDDdsd");
       if (doc) {
         res.json({
@@ -37,7 +37,7 @@ const createuser = async (req, res) => {
         const CreateUser = async () => {
           const salt = await bcrypt.genSalt();
           const hashPassword = await bcrypt.hash(password, salt);
-          userModal
+          userModel
             .create({ email: email, password: hashPassword, username })
             .then((docadded) => {
               const id = docadded._id.toString("hex");

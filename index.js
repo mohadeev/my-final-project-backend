@@ -7,7 +7,7 @@ import http from "http";
 import { Server, Socket } from "socket.io";
 import Router from "./routers/Router.js";
 import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
-import userModal from "./db/schema/userModal.js";
+import userModel from "./db/schema/userModel.js";
 
 dotenv.config();
 const ORIGIN = process.env.ORIGIN;
@@ -39,7 +39,7 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
   socketFuncs(io, socket);
-  console.log("new user connected");
+  // console.log("new user connected");
 });
 
 // app.use(
@@ -50,8 +50,7 @@ io.on("connection", (socket) => {
 
 app.use("/", Router);
 app.get("/api/user/senduser", (req, res) => {
-  console.log("users");
-  userModal.find({}).then((users) => {
+  userModel.find({}).then((users) => {
     console.log("users", users);
     res.json({ data: users });
   });
@@ -59,8 +58,7 @@ app.get("/api/user/senduser", (req, res) => {
 
 //
 app.get("/", (req, res) => {
-  console.log("users");
-  res.json({ data: "DF" });
+  res.json({ data: "" });
 });
 
 server.listen(PORT, (err) => {

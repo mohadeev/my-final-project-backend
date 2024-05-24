@@ -14,6 +14,11 @@ const UserScheme = mongoose.Schema(
       type: String,
       required: true,
     },
+    businessAddress: { type: String },
+    title: { type: String },
+    emailAddress: { type: String },
+    website: { type: String },
+    businessDescription: { type: String },
     senders: { type: [] },
     date: {
       type: Date,
@@ -23,5 +28,5 @@ const UserScheme = mongoose.Schema(
   { timestamps: true }
 );
 
-const userModal = mongoose.model("user", UserScheme);
-export default userModal;
+const userModel = mongoose.model("user", UserScheme);
+export default userModel;
