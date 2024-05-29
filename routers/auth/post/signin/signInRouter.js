@@ -1,12 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
-const routerSignIn = express.Router();
+const signInRouter = express.Router();
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import userModel from "../../../db/schema/userModel.js";
-// import userModel from "../../../../db/schema/userModel.js";
+import userModel from "../../../../db/schema/userModel.js";
 
-routerSignIn.post("/", async (req, res) => {
+signInRouter.post("/", async (req, res) => {
   const { password, email } = req.body;
   console.log(req.body);
   await userModel.findOne({ email: email }).then((docadded) => {
@@ -40,4 +39,4 @@ routerSignIn.post("/", async (req, res) => {
   });
 });
 
-export default routerSignIn;
+export default signInRouter;

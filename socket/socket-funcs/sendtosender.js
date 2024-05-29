@@ -28,7 +28,7 @@ const newRoom = async (conversationId, receiver, sender, text) => {
   });
 };
 
-const sendtosender = async (
+const sendToSender = async (
   sender,
   conversationId,
   receiver,
@@ -62,4 +62,4 @@ const sendtosender = async (
   }
 };
 
-export default sendtosender;
+export default sendToSender;

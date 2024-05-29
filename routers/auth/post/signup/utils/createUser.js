@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import userModel from "../../../../db/schema/userModel.js";
+import userModel from "../../../../../db/schema/userModel.js";
 
 const createuser = async (req, res) => {
   console.log(req.body);

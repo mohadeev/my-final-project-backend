@@ -1,5 +1,5 @@
-import sendtoreciever from "./sendtoreciever.js";
-import sendtosender from "./sendtosender.js";
+import sendToReciever from "./sendToReciever.js";
+import sendToSender from "./sendToSender.js";
 import typing from "./typing.js";
 var allusers = [];
 const addUser = (userId, socketId) => {
@@ -24,7 +24,7 @@ const socketFuncs = (io, socket) => {
   socket.on(
     "send-message",
     async ({ sender, conversationId, isfirstmmessage, receiver, text }) => {
-      sendtoreciever(
+      sendToReciever(
         sender,
         conversationId,
         receiver,
@@ -33,7 +33,7 @@ const socketFuncs = (io, socket) => {
         allusers,
         io
       );
-      sendtosender(
+      sendToSender(
         sender,
         conversationId,
         receiver,
@@ -44,7 +44,7 @@ const socketFuncs = (io, socket) => {
       );
     }
   );
-//fg
+  //fg
   socket.on("typing-message", async ({ conversationId, receiver }) => {
     typing(conversationId, receiver, allusers, io);
   });
