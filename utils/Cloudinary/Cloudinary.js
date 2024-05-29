@@ -1,15 +1,21 @@
 import dotenv from "dotenv";
-import cloudinary from "cloudinary";
+import cloudinaryMain from "cloudinary";
 
 dotenv.config();
-
-cloudinary.config({
-  cloud_name: "nimbatube",
-  api_key: "823672526525528",
-  api_secret: "FpKV7PxTxEMmBdq0Ig-P_gjw__s",
+cloudinaryMain.config({
+  cloud_name: "dz1jnfe0r",
+  api_key: "459441233673351",
+  api_secret: "NWdwzzsaQmGla7my6PYA_R6rNrY",
   cloudinary_url:
-    "cloudinary://823672526525528:FpKV7PxTxEMmBdq0Ig-P_gjw__s@nimbatube",
+    "cloudinary://459441233673351:NWdwzzsaQmGla7my6PYA_R6rNrY@dz1jnfe0r",
 });
 
-export { cloudinary };
+export default cloudinaryMain;
 
+// async function someAsyncFunction() {
+//   try {
+//     // Your async code here
+//   } catch (error) {
+//     // Handle the error
+//   }
+// }

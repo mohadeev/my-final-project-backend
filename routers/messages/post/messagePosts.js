@@ -20,7 +20,7 @@ const allRoutes = [
 allRoutes.map(({ name, auth, rout }) => {
   if (auth) {
     if (rout.length >= 2) {
-      messagePosts.use(`/post/message${rout}/:token`, verifyUser, name);
+      messagePosts.use(`/post/message${rout}`, verifyUser, name);
     } else {
       messagePosts.use("/", verifyUser, name);
     }

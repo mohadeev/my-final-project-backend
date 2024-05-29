@@ -7,7 +7,7 @@ import userModel from "../../../db/schema/userModel.js";
 import verifyUser from "../../../utils/verify-user/verifyUser.js";
 const allMessages = express.Router();
 allMessages.get(
-  "/get/message/all-messages/:convid/:token",
+  "/get/message/all-messages/:convid",
   verifyUser,
   async (req, res) => {
     //import verifyUser from "../../../../utils/verify-user/verifyUser.js";

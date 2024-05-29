@@ -15,7 +15,7 @@ const allRoutes = [
 allRoutes.map(({ name, auth, rout }) => {
   if (auth) {
     if (rout.length >= 2) {
-      userGetRoutes.use(`/get/user${rout}/:token`, verifyUser, name);
+      userGetRoutes.use(`/get/user${rout}`, verifyUser, name);
     } else {
       userGetRoutes.use("/", verifyUser, name);
     }

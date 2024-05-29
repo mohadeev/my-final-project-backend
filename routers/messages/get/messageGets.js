@@ -22,7 +22,7 @@ const allRoutes = [
 allRoutes.map(({ name, auth, rout }) => {
   if (auth) {
     if (rout.length >= 2) {
-      messageGets.use(`/get/message${rout}/:token`, verifyUser, name);
+      messageGets.use(`/get/message${rout}`, verifyUser, name);
     } else {
       messageGets.use("/", verifyUser, name);
     }

@@ -1,6 +1,7 @@
 import express from "express";
 import verifyUser from "../../../utils/verify-user/verifyUser.js";
 import updateAccountData from "./updateAccountData.js";
+import uploadProfileImage from "./uploadProfileImage.js";
 const authRouterPost = express.Router();
 
 const allRoutes = [
@@ -9,13 +10,17 @@ const allRoutes = [
     auth: true,
     rout: "/create-conversation",
   },
-
+  {
+    name: uploadProfileImage,
+    auth: true,
+    rout: "/create-conversation2",
+  },
 ];
 
 allRoutes.map(({ name, auth, rout }) => {
   if (auth) {
     if (rout.length >= 2) {
-      authRouterPost.use(`/post/message${rout}/:token`, verifyUser, name);
+      authRouterPost.use(`/post/message${rout}`, verifyUser, name);
     } else {
       authRouterPost.use("/", verifyUser, name);
     }
