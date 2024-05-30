@@ -1,6 +1,6 @@
 import sendToReciever from "./sendToReciever.js";
 import sendToSender from "./sendToSender.js";
-// import typing from "./typing.js";
+import typing from "./typing.js";
 var allusers = [];
 const addUser = (userId, socketId) => {
   if (userId) {
@@ -18,8 +18,6 @@ const socketFuncs = (io, socket) => {
   socket.on("typing-message", (userid) => {
     // console.log("typing", userid);
   });
-
-  //FDg`psdv`
 
   socket.on(
     "send-message",
