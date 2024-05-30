@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import dbConnect from "./db/dbConnect.js";
 import http from "http";
 import { Server, Socket } from "socket.io";
-// import Router from "./routers/Router.js";
+import Router from "./routers/Router.js";
 import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
 
 dotenv.config();
@@ -32,7 +32,7 @@ io.on("connection", (socket) => {
   socketFuncs(io, socket);
 });
 
-// app.use("/", Router);
+app.use("/", Router);
 app.get("/", (req, res) => {
   res.json("Hello world!");
 });
