@@ -1,6 +1,6 @@
-import sendToReciever from "./sendToReciever.js";
-import sendToSender from "./sendToSender.js";
-import typing from "./typing.js";
+// import sendToReciever from "./sendToReciever.js";
+// import sendToSender from "./sendToSender.js";
+// import typing from "./typing.js";
 var allusers = [];
 const addUser = (userId, socketId) => {
   if (userId) {
