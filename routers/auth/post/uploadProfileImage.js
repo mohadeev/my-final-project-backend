@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import multer from "multer";
 import crypto from "crypto";
 import path from "path";
-import cloudinaryMain from "../../../utils/cloudinary/Cloudinary.js";
+import cloudinaryMain from "../../../utils/cloudinary/cloudinaryMain.js";
 import userModel from "../../../db/schema/userModel.js";
 import fs from "fs";
 const __dirname = path.resolve();
