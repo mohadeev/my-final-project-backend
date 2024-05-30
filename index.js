@@ -24,7 +24,7 @@ app.use(function (req, res, next) {
 });
 const io = new Server(server, {
   cors: {
-    origins: [`${ORIGIN}`],
+    origins: "*",
   },
 });
 
