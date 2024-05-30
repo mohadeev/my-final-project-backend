@@ -1,4 +1,4 @@
-import sendToReciever from "./sendToRecieversdvs.js";
+import sendToReciever from "./sendToReciever.js";
 // import sendToSender from "./sendToSender.js";
 // import typing from "./typing.js";
 var allusers = [];
