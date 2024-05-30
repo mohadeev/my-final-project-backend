@@ -6,7 +6,7 @@ import dbConnect from "./db/dbConnect.js";
 import http from "http";
 import { Server, Socket } from "socket.io";
 // import Router from "./routers/Router.js";
-import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
+// import socketFuncs from "./socket/socket-funcs/socketFuncs.js";
 
 dotenv.config();
 const ORIGIN = process.env.ORIGIN;
@@ -29,7 +29,7 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-  socketFuncs(io, socket);
+  // socketFuncs(io, socket);
 });
 
 // app.use("/", Router);
